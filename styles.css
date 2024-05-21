@@ -25,6 +25,18 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px; /* Added margin to separate from the percentage */
+}
+
+.rat-gif {
+    width: 50px;
+    height: auto;
+    margin-right: 20px; /* Added margin */
+}
+
+.countdown-subtext {
+    font-size: 0.8em; /* Adjust font size */
+    margin-top: 5px; /* Add margin */
 }
 
 .loading-icon {
@@ -51,17 +63,6 @@ body, html {
     to { transform: rotate(360deg); }
 }
 
-.rat-gif {
-    width: 50px;
-    height: auto;
-    margin-right: 10px;
-}
-
-.time-left {
-    display: flex;
-    align-items: center;
-}
-
 .fireworks {
     display: none;
     position: absolute;
@@ -77,7 +78,8 @@ body, html {
     position: absolute;
     width: 20px;
     height: 20px;
-    background: #375bd2;
+    background: white; /* Change background color */
+    border: 6px solid #375bd2; /* Add border */
     clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
     animation: explode 1s linear infinite;
 }
