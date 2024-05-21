@@ -17,7 +17,7 @@ function updateCountdown() {
     const minutesLeft = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
     const secondsLeft = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-    document.getElementById('time-left').innerText = `${daysLeft} days, ${hoursLeft} hours, ${minutesLeft} minutes, ${secondsLeft} seconds left`;
+    document.getElementById('countdown-text').innerText = `${daysLeft} days, ${hoursLeft} hours, ${minutesLeft} minutes, ${secondsLeft} seconds left`;
 
     // Show fireworks if countdown is complete
     if (timeLeft <= 0) {
