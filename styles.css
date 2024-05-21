@@ -60,25 +60,13 @@ body, html {
     to { transform: rotate(360deg); }
 }
 
-.fireworks {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-/* Updated hexagon style */
 .hexagon {
     position: absolute;
     width: 20px;
     height: 20px;
     background: #375bd2;
     clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
-    animation: rotateHexagon 5s linear infinite; /* Increased duration to slow down */
+    animation: rotateHexagon 5s linear infinite;
 }
 
 @keyframes rotateHexagon {
