@@ -10,6 +10,7 @@
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -18,13 +19,10 @@
         
         .container {
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         #countdownValue {
-            font-size: 64px;
+            font-size: 48px;
             margin-bottom: 10px;
         }
 
@@ -35,15 +33,23 @@
 
         #dateRange {
             font-size: 18px;
+            margin-top: 10px;
         }
 
+        #ratGif,
         #hexagon {
             width: 20px;
             height: 20px;
             background: #375bd2;
             clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
-            animation: rotateHexagon 5s linear infinite; /* Increased duration to slow down */
-            margin-top: 10px;
+        }
+
+        #ratGif {
+            margin-right: 10px;
+        }
+
+        #hexagon {
+            margin-left: 10px;
         }
 
         @keyframes rotateHexagon {
@@ -57,10 +63,11 @@
     </style>
 </head>
 <body>
+    <div id="countdownValue">Calculating...</div>
+
     <div class="container">
-        <div id="countdownValue">Calculating...</div>
+        <img id="ratGif" src="rat.gif" alt="Rat">
         <div id="countdownText">Days, Hours, Seconds left</div>
-        <img src="rat.gif" alt="Rat" style="width: 100px;">
         <div id="hexagon"></div>
     </div>
 
