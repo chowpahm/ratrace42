@@ -73,13 +73,13 @@ body, html {
 }
 
 .hexagon {
-    position: absolute;
-    width: 100px; /* Adjust width */
-    height: 57.74px; /* Adjust height to maintain hexagon shape */
-    background: white; /* White interior */
-    border: 10px solid #375bd2; /* Thick border with specified color */
-    transform: rotate(30deg); /* Rotate hexagon to correct orientation */
-    animation: explode 1s linear infinite;
+  position: absolute;
+  width: 100px;
+  height: 115.47px; /* (2 * sqrt(3) / 2) * width */
+  border-left: 55px solid transparent;
+  border-right: 55px solid transparent;
+  border-bottom: 100px solid #375bd2;
+  transform: rotate(120deg);
 }
 
 @keyframes explode {
