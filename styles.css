@@ -61,12 +61,13 @@ body, html {
 }
 
 .hexagon {
-    position: absolute;
+    display: inline-block; /* Added to ensure hexagon displays inline */
     width: 20px;
     height: 20px;
     background: #375bd2;
     clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
     animation: rotateHexagon 5s linear infinite;
+    margin-left: 5px; /* Add margin for spacing */
 }
 
 @keyframes rotateHexagon {
@@ -77,3 +78,4 @@ body, html {
         transform: rotate(360deg);
     }
 }
+
