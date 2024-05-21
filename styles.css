@@ -76,11 +76,11 @@ body, html {
 
 .hexagon {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background: white; /* Change background color */
-    border: 6px solid #375bd2; /* Add border */
-    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    width: 100px; /* Adjust width */
+    height: 57.74px; /* Adjust height to maintain hexagon shape */
+    background: white; /* White interior */
+    border: 10px solid #375bd2; /* Thick border with specified color */
+    transform: rotate(30deg); /* Rotate hexagon to correct orientation */
     animation: explode 1s linear infinite;
 }
 
