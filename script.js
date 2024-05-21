@@ -19,30 +19,8 @@ function updateCountdown() {
 
     document.getElementById('countdown-text').innerText = `${daysLeft} days, ${hoursLeft} hours, ${minutesLeft} minutes, ${secondsLeft} seconds left`;
 
-    // Show fireworks if countdown is complete
-    if (timeLeft <= 0) {
-        document.getElementById('fireworks').style.display = 'block';
-        createFireworks();
-    } else {
-        document.getElementById('fireworks').style.display = 'none';
-    }
-
     // Update every second
     setTimeout(updateCountdown, 1000);
-}
-
-function createFireworks() {
-    const fireworksContainer = document.getElementById('fireworks');
-    fireworksContainer.innerHTML = '';
-
-    for (let i = 0; i < 20; i++) {
-        const hexagon = document.createElement('div');
-        hexagon.className = 'hexagon';
-        hexagon.style.top = `${Math.random() * 100}%`;
-        hexagon.style.left = `${Math.random() * 100}%`;
-        hexagon.style.animationDuration = `${Math.random() * 1 + 1}s`;
-        fireworksContainer.appendChild(hexagon);
-    }
 }
 
 // Initialize countdown
