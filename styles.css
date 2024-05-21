@@ -25,16 +25,15 @@ body, html {
     margin-top: 5px;
 }
 
-
 .rat-gif {
     width: 50px;
     height: auto;
-    margin-right: 20px; /* Added margin */
+    margin-right: 20px;
 }
 
 .countdown-subtext {
-    font-size: 0.8em; /* Adjust font size */
-    margin-top: 5px; /* Add margin */
+    font-size: 0.8em;
+    margin-top: 5px;
 }
 
 .loading-icon {
@@ -72,6 +71,7 @@ body, html {
     overflow: hidden;
 }
 
+/* Updated hexagon style */
 .hexagon {
     position: absolute;
     width: 20px;
@@ -89,6 +89,3 @@ body, html {
         transform: rotate(360deg);
     }
 }
-
-
-
