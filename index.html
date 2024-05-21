@@ -28,6 +28,9 @@
 
         #countdownText {
             font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 10px;
         }
 
@@ -36,19 +39,17 @@
             margin-top: 10px;
         }
 
-        #ratGif,
+        #ratGif {
+            margin-right: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+
         #hexagon {
             width: 20px;
             height: 20px;
             background: #375bd2;
             clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
-        }
-
-        #ratGif {
-            margin-right: 10px;
-        }
-
-        #hexagon {
             margin-left: 10px;
         }
 
@@ -65,9 +66,9 @@
 <body>
     <div id="countdownValue">Calculating...</div>
 
-    <div class="container">
+    <div id="countdownText">
         <img id="ratGif" src="rat.gif" alt="Rat">
-        <div id="countdownText">Days, Hours, Seconds left</div>
+        <div>Days, Hours, Seconds left</div>
         <div id="hexagon"></div>
     </div>
 
@@ -97,7 +98,7 @@
             const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
-            document.getElementById('countdownText').innerText = `${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds left`;
+            document.getElementById('countdownText').children[1].innerText = `${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds left`;
         }
 
         // Call updateCountdown every second
