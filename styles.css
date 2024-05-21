@@ -1,5 +1,3 @@
-/* styles.css */
-
 /* Define styles for the countdown and its components */
 .container {
     display: flex;
@@ -26,25 +24,22 @@
     margin-top: 10px; /* Add margin for spacing */
 }
 
-/* Define styles for the loading icon (hexagon) */
+/* Define styles for the loading icon */
 .loading-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: inline-block; /* Display inline to be next to the countdown text */
     width: 20px;
     height: 20px;
-    border: 2px solid #fff; /* Change border color as needed */
-    border-radius: 50%;
-    border-top: 2px solid transparent;
-    animation: spin 1s linear infinite; /* Add spinning animation */
+    background: #375bd2;
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    animation: rotateHexagon 5s linear infinite;
+    margin-left: 5px; /* Add margin for spacing */
 }
 
-@keyframes spin {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
+@keyframes rotateHexagon {
+    from {
+        transform: rotate(0deg);
     }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
+    to {
+        transform: rotate(360deg);
     }
 }
