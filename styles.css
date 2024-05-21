@@ -20,13 +20,11 @@ body, html {
     margin-bottom: 20px;
 }
 
-.countdown {
-    font-size: 1.5em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px; /* Added margin to separate from the percentage */
+.countdown-subtext {
+    font-size: 0.8em;
+    margin-top: 5px;
 }
+
 
 .rat-gif {
     width: 50px;
