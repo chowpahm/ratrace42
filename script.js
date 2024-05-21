@@ -9,7 +9,7 @@ function updateCountdown() {
 
     // Calculate percentage
     const percentage = (timeElapsed / totalDuration) * 100;
-    document.getElementById('percentage').innerText = `${percentage}%`; // Display percentage without rounding
+    document.getElementById('percentage').innerText = `${percentage}%`; // Display percentage dynamically
 
     // Calculate time left
     const daysLeft = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
