@@ -4,22 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown App</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        
+        .container {
+            text-align: center;
+        }
+
+        #countdownText {
+            font-size: 24px;
+        }
+
+        #countdownValue {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        #hexagon {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            background: #375bd2;
+            clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+            animation: rotateHexagon 5s linear infinite; /* Increased duration to slow down */
+        }
+
+        @keyframes rotateHexagon {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <div id="percentage" class="percentage">0.0000%</div>
-        <div id="countdown" class="countdown">
-            <div id="time-left" class="time-left">
-                <img id="rat-gif" src="rat.gif" alt="Running Rat" class="rat-gif">
-                <span id="countdown-text">0 days, 0 hours, 0 minutes, 0 seconds left
-                    <div class="loading-icon"></div> <!-- Loading icon div added here -->
-                </span>
-                <div class="countdown-subtext">November 28, 2022 - November 28, 2025</div>
-            </div>
-        </div>
+        <div id="countdownValue">Calculating...</div>
+        <div id="countdownText">Days, Hours, Seconds left</div>
+        <div id="dateRange">November 28, 2022 - November 28, 2025</div>
+        <img src="rat.gif" alt="Rat" style="width: 100px;">
+        <div id="hexagon"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Function to update countdown value
+        function updateCountdown() {
+            // Define start and end dates
+            const startDate = new Date('2022-11-28');
+            const endDate = new Date('2025-11-28');
+
+            // Calculate total milliseconds and milliseconds passed
+            const totalMilliseconds = endDate - startDate;
+            const passedMilliseconds = Date.now() - startDate;
+
+            // Calculate percentage
+            const percentage = (passedMilliseconds / totalMilliseconds) * 100;
+
+            // Update countdown value
+            document.getElementById('countdownValue').innerText = percentage.toFixed(2) + '%';
+
+            // Update countdown text
+            const remainingTime = totalMilliseconds - passedMilliseconds;
+            const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+            document.getElementById('countdownText').innerText = `${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds left`;
+        }
+
+        // Call updateCountdown every second
+        setInterval(updateCountdown, 1000);
+
+        // Call updateCountdown on page load
+        updateCountdown();
+    </script>
 </body>
 </html>
