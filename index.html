@@ -18,24 +18,32 @@
         
         .container {
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #countdownValue {
+            font-size: 64px;
+            margin-bottom: 10px;
         }
 
         #countdownText {
             font-size: 24px;
+            margin-bottom: 10px;
         }
 
-        #countdownValue {
-            font-size: 48px;
-            margin-bottom: 20px;
+        #dateRange {
+            font-size: 18px;
         }
 
         #hexagon {
-            position: relative;
             width: 20px;
             height: 20px;
             background: #375bd2;
             clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
             animation: rotateHexagon 5s linear infinite; /* Increased duration to slow down */
+            margin-top: 10px;
         }
 
         @keyframes rotateHexagon {
@@ -52,10 +60,11 @@
     <div class="container">
         <div id="countdownValue">Calculating...</div>
         <div id="countdownText">Days, Hours, Seconds left</div>
-        <div id="dateRange">November 28, 2022 - November 28, 2025</div>
         <img src="rat.gif" alt="Rat" style="width: 100px;">
         <div id="hexagon"></div>
     </div>
+
+    <div id="dateRange">November 28, 2022 - November 28, 2025</div>
 
     <script>
         // Function to update countdown value
