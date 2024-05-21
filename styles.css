@@ -74,13 +74,15 @@ body, html {
 
 .hexagon {
   position: absolute;
-  width: 100px;
-  height: 115.47px; /* (2 * sqrt(3) / 2) * width */
-  border-left: 55px solid transparent;
-  border-right: 55px solid transparent;
-  border-bottom: 100px solid #375bd2;
+  width: 50px;
+  height: 57.74px; /* (2 * sqrt(3) / 2) * width */
+  background: white;
+  border-left: 27.5px solid transparent;
+  border-right: 27.5px solid transparent;
+  border-bottom: 50px solid #375bd2;
   transform: rotate(120deg);
 }
+
 
 @keyframes explode {
     0% { transform: scale(0.1); opacity: 1; }
