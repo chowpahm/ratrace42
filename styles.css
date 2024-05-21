@@ -73,20 +73,20 @@ body, html {
 }
 
 .hexagon {
-  position: absolute;
-  width: 50px;
-  height: 57.74px; /* (2 * sqrt(3) / 2) * width */
-  background: white;
-  border-left: 27.5px solid transparent;
-  border-right: 27.5px solid transparent;
-  border-bottom: 50px solid #375bd2;
-  transform: rotate(120deg);
-  margin-left: 10px; /* Add some space */
-  display: inline-block; /* Ensure the container stays inline */  
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #375bd2;
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    animation: rotateHexagon 5s linear infinite; /* Increased duration to slow down */
 }
 
-
-@keyframes explode {
-    0% { transform: scale(0.1); opacity: 1; }
-    100% { transform: scale(1); opacity: 0; }
+@keyframes rotateHexagon {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
+
