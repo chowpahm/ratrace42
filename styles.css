@@ -28,34 +28,12 @@ body, html {
 }
 
 .loading-icon {
-    width: 50px;
-    height: 50px;
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.loading-icon:before, .loading-icon:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    width: 0;
-    height: 0;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    border-bottom: 43.3px solid #375bd2;
+    width: 20px;
+    height: 20px;
+    background-color: #375bd2;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     animation: rotate 2s linear infinite;
-}
-
-.loading-icon:after {
-    top: auto;
-    bottom: 0;
-    border-top: 43.3px solid #375bd2;
-    border-bottom: none;
-    animation: rotate 2s linear infinite reverse;
+    margin-left: 10px;
 }
 
 @keyframes rotate {
@@ -64,17 +42,22 @@ body, html {
 }
 
 .rat {
-    width: 50px;
-    height: 20px;
+    width: 20px;
+    height: 10px;
     background: #fff;
     position: relative;
-    margin-top: 10px;
     animation: run 1s linear infinite;
+    margin-right: 10px;
 }
 
 @keyframes run {
     from { transform: translateX(0); }
-    to { transform: translateX(50px); }
+    to { transform: translateX(10px); }
+}
+
+.time-left {
+    display: flex;
+    align-items: center;
 }
 
 .fireworks {
